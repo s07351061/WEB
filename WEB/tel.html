@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>注意事項</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="intro.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script>
+        //宣告預設表單內容為空 （你想要的話也可以加東西）
+            var initSubject='',initBody='';
+         
+            //按下傳送按鈕後執行
+            function submitHandler(){
+                var to = "contact@example.com";//寫死的傳送對象 就是公司的信箱 不會顯示在網頁上
+                var name = nameText.value;//讀取ID為 nameTextuser 物件中的值
+                var email = emailText.value;
+                var tel = telText.value;
+                var subject = subText.value;
+        //把user填的資料都塞到 mail body 中
+                var body = ""+bodyText.value+'%0A%0A%0A';//%0A是換行 換了三行
+                    body += "From："+nameText.value+'%0A';
+                    body += "Email："+emailText.value+'%0A';
+                    body += "Tel："+telText.value;
+        //傳送的主要程式碼
+                mailTo.href="mailto:"+to+"?subject="+subject+"&body="+body;
+                mailTo.click();
+            }
+        //在body onload
+            function init(){
+                subText.value=initSubject;
+                toText.value=initTo;
+                bodyText.value=initBody;
+            }
+        </script> 
+   </head>
+  <body style="background-color: powderblue;">
+      <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+          <a class="navbar-brand" href="index.html">3C預購-排隊系統</a>
+          <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+              aria-expanded="false" aria-label="Toggle navigation"></button>
+          <div class="collapse navbar-collapse" id="collapsibleNavId">
+              <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                  <li class="nav-item active">
+                      <a class="nav-link" href="index.html">首頁 <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="login.html">會員中心</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">關於我們</a>
+                      <div class="dropdown-menu" aria-labelledby="dropdownId">
+                          <a class="dropdown-item" href="intro.html">注意事項</a>
+                          <a class="dropdown-item" href="tel.html">聯絡我們</a>
+                      </div>
+                  </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0">
+                  <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form>
+          </div>
+      </nav>
+      <h2 class="display-3"style="color:Blue;">聯絡我們</h2>
+      <br>
+      <p><font size="5">
+        若您有任何需要我們服務的地方，請填寫以下表單表達您的意見，我們收到您的來信後，將儘速於 3～5 日內回覆（不含週六例假日）。<br>
+        若您超過時間尚未收到我們的回信，或您的問題尚未得到解決，<br>
+        請撥打客服專線 0987-000-000 (週一至週五，早上九點至下午五點)<br>
+      </font>
+      <br>
+      <div class="container-fluid">
+      </p>
+        <!-- 一開始即執行javascript的 init() function -->
+        <body onload="init()">
+        <form   enctype="text/plain" accept-charset="utf-8">
+       <!-- 寄件者姓名    -->
+        <input id="nameText" type="text" name="Name"  value size="40" placeholder="姓名(name)" required>  <!-- required 必填欄位 ，placeholder 預設內容--> <br>
+        
+        <!-- 寄件者email -->
+        <input id="emailText" type="email" name="Email"  value size="40" placeholder="Email" required><br>
+        
+        <!-- 寄件者電話 -->
+        <input id="telText"type="tel" name="Phone"  value size="40" aria-invalid="false" placeholder="電話(phone)" required><br>
+        
+        <!-- 郵件主旨 -->
+        <input  id="subText" type="text" name="Subject"  value size="40" aria-invalid="false" placeholder="主旨(subject)" required><br>
+                
+        <!-- 郵件內容 -->
+        <textarea id="bodyText" name="your-message" cols="40" rows="10"  aria-required="true" aria-invalid="false" placeholder="你的訊息(Your Message)" required></textarea><br>
+        
+        <!-- 傳送按鈕 -->
+        <div>
+            <input type="button" value="送出訊息" onclick="submitHandler();">
+            <a id="mailTo"></a>
+        </div>
+        <br>
+        </form> 
+        </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>      

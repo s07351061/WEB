@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>會員登入與註冊</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="login.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body style="background-color: powderblue;">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+        <a class="navbar-brand" href="index.html">3C預購-排隊系統</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+            aria-expanded="false" aria-label="Toggle navigation"></button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">首頁 <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">會員中心</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">關於我們</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownId">
+                        <a class="dropdown-item" href="intro.html">注意事項</a>
+                        <a class="dropdown-item" href="#">關於我們</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>    
+    <p>              
+    <div class="container">
+        <form id="register" name="myForm" class="register" action="infoReceive.jsp"  method="post">
+            <div class="t1">
+                <input style="color:white;border-width:0px;margin:0 auto;width:150px;height:50px; background-color:Blue;"
+                    type='submit' onclick="TurnToLogin()" value="登入">
+            </div>
+            <div class="t2">
+                <input style="color:white;border-width:0px;margin:0 auto;width:150px;height:50px;background-color:Blue; "
+                    type='submit' onclick="TurnToRegister()" value='註冊'>
+            </div>
+            <div class="t3">
+                <input style="width:250px;height:50px;" type="email" name="email" id="email" placeholder="請輸入郵箱"></td>
+            </div>
+            <div class="t3">
+                <input style="width:250px;height:50px;" type="text" name="name"  required="required" placeholder="請輸入使用者名稱"></td>
+            </div>
+            <div class="t3">
+                <input style="margin:0 auto; width:250px;height:50px;" type="password" id="pwd" required="required"
+                    placeholder="請輸入6-20位密碼，建議數字和字母組合"></td>
+            </div>
+            <div class="t3">
+                <input style="margin:0 auto; width:250px;height:50px;" type="password" id="pwd2" required="required"
+                    placeholder="確認密碼"></td>
+            </div>
+            <div class="t7">
+                <input style="width:120px;height:50px;" type="yanzheng" name="yanzheng" required="required" placeholder="輸入驗證碼"></td>
+                <div class="t8">
+                </div>
+            </div>
+            <div class="t5">
+                <input name="tongyi" type="checkbox" required="required">我同意《使用者註冊協議》<br></td>
+            </div>
+            <div class="t6">
+                <input style="color:white;border-width:0px;margin:0 auto; width:250px;height:50px;background-color:#187FE4;"
+                    type="submit" onclick="validateForm()" value="註冊"></td>
+            </div>
+        </form>
+    
+
+
+    <form id="login" name="myForm2" class="login" action="welcome.html" onsubmit="return checkUser();" method="post">
+        <div class="t1">
+            <input style="color:white;border-width:0px;margin:0 auto;width:150px;height:50px; background-color:Blue;"
+                type='button' onclick="TurnToLogin()" value='登入'>&nbsp;&nbsp;&nbsp;
+        </div>
+        <div class="t2">
+            <input style="color:white;border-width:0px;margin:0 auto;width:150px;height:50px;background-color:Blue; "
+                type='button' onclick="TurnToRegister()" value='註冊'>
+        </div>
+
+        <div class="t3">
+            <input style="width:250px;height:50px;" type="text" name="name2" id="loginname" placeholder="請輸入使用者名稱"></td>
+        </div>
+        <div class="t3">
+            <input style="margin:0 auto; width:250px;height:50px;" type="password" name="pwd3" id="loginpwd"
+                placeholder="請輸入密碼"></td>
+        </div>
+
+        <div class="t6">
+            <input style="color:white;border-width:0px;margin:0 auto; width:250px;height:50px;background-color:#187FE4;"
+                type="submit" value="登入"></td>
+        </div>
+    </form>
+</div>
+</p>
+    
+    <script>
+        var TurnToLogin = () => {
+            document.getElementById('login').style.display = "block";
+            document.getElementById('register').style.display = "none";
+        }
+        var TurnToRegister = () => {
+            document.getElementById('register').style.display = "block";
+            document.getElementById('login').style.display = "none";
+        }
+        function checkUser() {
+            var result = document.getElementById("loginname").value;
+            var password = document.getElementById("loginpwd").value;
+            if (result != "root" || password != "123456") {
+                window.alert("使用者名稱或密碼不正確：內建使用者名稱root，密碼123456");
+                return false;
+            } else {
+                return true;
+            }
+        }
+    </script>      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <title>商店</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script type="text/javascript">
+    </script>
+    <script>
+        $(document).ready(function(){
+          $("#3090").click(function(){
+          $("#graphic").toggle();
+          });
+          $("#3080").click(function(){
+          $("#G3080").toggle();
+          $("#3070").click(function(){
+          $("#G3070").toggle();
+          $("#3060").click(function(){
+          $("#G3060").toggle();
+          $("#3050").click(function(){
+          $("#G3050").toggle();
+          });
+        });
+        </script>
+
+  </head>
+  <body style="background-color: powderblue;">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+        <a class="navbar-brand" href="index.html">3C預購-排隊系統</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+            aria-expanded="false" aria-label="Toggle navigation"></button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">首頁 <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">會員中心</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">關於我們</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownId">
+                        <a class="dropdown-item" href="intro.html">注意事項</a>
+                        <a class="dropdown-item" href="tel.html">聯絡我們</a>
+                    </div>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">搜尋</button>
+            </form>
+        </div>
+        <br>      
+    </nav>
+        <p>
+        <div class="container-fluid">
+            <h2></h2>                                                 
+            <div class="dropdown">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                選擇商品
+              </button>
+              <div class="dropdown-menu">
+                <a id = "3090" class="dropdown-item" >RTX3090</a>
+                <a id = "3080" class="dropdown-item" >RTX3080</a>
+                <a id = "3070" class="dropdown-item" >RTX3070</a>
+                <a id = "3060" class="dropdown-item" >RTX3060</a>
+                <a id = "3050" class="dropdown-item" >RTX3050</a>
+              </div>
+            </div>
+          </div>
+        </p>
+        <div id = "graphic" style="color: purple">
+            <dl>
+                <dt>RTX3090</dt>
+                <dd>
+                <img id= "G3090" src="3090.png" class="img-fluid" alt="Responsive image" width="400"><br>
+                </dd>
+                <dt>RTX3080</dt>
+                <dd>
+                <img id= "G3080" src="3080.jpg" class="img-fluid" alt="Responsive image" width="400"><br>
+                </dd>
+                <dt>RTX3070</dt>
+                <dd>
+                <img id= "G3070" src="3070.jpg" class="img-fluid" alt="Responsive image" width="400"><br>
+                </dd>
+                <dt>RTX3060</dt>
+                <dd>
+                <img id= "G3060" src="3060.jpg" class="img-fluid" alt="Responsive image" width="400"><br>
+                </dd>
+                <dt>RTX3050</dt>
+                <dd>
+                <img id= "G3050" src="3050.jpg" class="img-fluid" alt="Responsive image" width="400"><br>
+                </dd>
+            </dl>
+        </div>
+      
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  </body>
+</html>
